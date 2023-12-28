@@ -44,6 +44,9 @@ dependencies {
 
 	// GeoMetry
 	implementation 'org.locationtech.jts:jts-core:1.16.1'
+
+	// flyway
+	implementation 'org.flywaydb:flyway-core:10.4.0'
 }
 
 tasks.withType(KotlinCompile) {
