@@ -14,7 +14,7 @@ class UserPersistenceAdapter(
     override fun saveUser(user: User) {
         val userEntity = UserEntity(
             name = user.name,
-            userId = user.id,
+            userId = user.userId,
             userPassword = user.password
         )
 

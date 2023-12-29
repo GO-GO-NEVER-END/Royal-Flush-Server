@@ -22,7 +22,7 @@ class UserPersistenceAdapterTest {
     @BeforeEach
     fun setUp() {
         user = User(
-            id = "id",
+            userId = "id",
             password = "password",
             name = "테스트",
             coin = 0,

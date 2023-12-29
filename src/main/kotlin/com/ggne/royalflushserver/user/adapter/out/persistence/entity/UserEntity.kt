@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import lombok.Builder
 
 @Entity
 @Table(name = "user")
@@ -27,7 +26,8 @@ class UserEntity(
 ) {
     fun toDomain(): User {
         return User(
-            id = userId,
+            id = id,
+            userId = userId,
             password = "",
             name = name,
             coin = coin,
