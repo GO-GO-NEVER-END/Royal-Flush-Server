@@ -1,7 +1,8 @@
 package com.ggne.royalflushserver.user.adapter.out.persistence
 
-import com.ggne.royalflushserver.user.adapter.out.persistence.repository.UserRepository
-import com.ggne.royalflushserver.user.domain.model.User
+import com.ggne.royalflushserver.biz.user.adapter.out.persistence.UserPersistenceAdapter
+import com.ggne.royalflushserver.biz.user.adapter.out.persistence.repository.UserRepository
+import com.ggne.royalflushserver.biz.user.domain.model.User
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
