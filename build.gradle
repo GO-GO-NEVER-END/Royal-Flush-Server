@@ -25,7 +25,6 @@ repositories {
 dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 //	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-//	implementation 'org.springframework.boot:spring-boot-starter-security'
 //	implementation 'org.springframework.boot:spring-boot-starter-validation'
 //	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-reactor'
 //	implementation 'org.springframework.boot:spring-boot-starter-webflux'
@@ -50,6 +49,9 @@ dependencies {
 	// flyway
 	implementation 'org.flywaydb:flyway-core'
 	implementation "org.flywaydb:flyway-mysql"
+
+	// security
+	implementation "org.springframework.boot:spring-boot-starter-security"
 
 	// test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
