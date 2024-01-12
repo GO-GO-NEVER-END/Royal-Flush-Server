@@ -10,15 +10,19 @@ import org.springframework.stereotype.Component
 @Component
 class CustomLoginFailureHandler: AuthenticationFailureHandler{
 
-    private lateinit var objectMapper: ObjectMapper
+    private val objectMapper = ObjectMapper()
 
+    // TODO : failure했을 때의 동자 정의하기
     override fun onAuthenticationFailure(
         request: HttpServletRequest?,
         response: HttpServletResponse?,
         exception: AuthenticationException?
     ) {
-        response?.status = HttpServletResponse.SC_UNAUTHORIZED
+        val data = mapOf("timestamp" to System.currentTimeMillis(), "exception" to exception?.message)
+        response?.apply {
+            status = HttpServletResponse.SC_UNAUTHORIZED
+        }
+        response?.outputStream?.println(objectMapper.writeValueAsString(data))
 
-        // TODO : failure했을 때의 return 형태 지정하기
     }
 }
