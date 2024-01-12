@@ -3,10 +3,17 @@ create table if not exists royal_flush.user
 (
     id            bigint auto_increment primary key,
     user_id       varchar(255) not null comment "유저 id",
-    user_password varchar(255) not null comment "유저 password",
-    name          varchar(255) not null comment "유저 닉네임",
-    coin          int          not null default 0 comment "유저가 가지고 있는 코인 수",
-    is_ssamulie   boolean      not null default 0 comment "싸믈리에 여부"
+    user_password varchar(255) not null comment "유저 password"
+);
+
+create table if not exists royal_flush.user_config
+(
+    id          bigint auto_increment primary key,
+    user_id     bigint       not null comment "유저 id",
+    name        varchar(255) not null comment "유저 닉네임",
+    coin        int          not null default 0 comment "유저가 가지고 있는 코인 수",
+    is_ssamulie boolean      not null default 0 comment "싸믈리에 여부",
+    constraint FK_USER_CONFIG_TO_USER foreign key (user_id) references royal_flush.user (id)
 );
 
 create table if not exists royal_flush.subway
